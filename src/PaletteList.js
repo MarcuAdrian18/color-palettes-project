@@ -8,13 +8,13 @@ import { boxSizing } from "@mui/system";
 const styles = {
   root: {
     backgroundColor: "blue",
-    height: "100%",
+    height: "100vh",
     display: "flex",
     alignItems: "flex-Start",
     justifyContent: "center",
   },
   container: {
-    width: "50%",
+    width: "60%",
     display: "flex",
     alignItems: "flex-start",
     justifyContent: "center",
