@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import ColorBox from "./ColorBox";
+
 import Navbar from "./Navbar";
 import "./Palette.css";
 
@@ -17,11 +18,19 @@ class Palette extends Component {
     this.setState({ format: val });
   }
   render() {
-    const { paletteName, emoji } = this.props.palette;
+    const { paletteName, emoji, id } = this.props.palette;
     const { level, format } = this.state;
     const colorBoxes = this.props.palette.colors[this.state.level].map(
       (color) => (
-        <ColorBox background={color[format]} name={color.name} key={color.id} />
+        <ColorBox
+          background={color[format]}
+          name={color.name}
+          key={color.id}
+          id={color.id}
+          paletteId={id}
+          moreUrl={`palette/${id}/${color.id}`}
+          showLink={true}
+        />
       )
     );
     return (
